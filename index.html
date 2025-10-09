@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiDAR 3D Services - Numérisation 3D Professionnelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <h2>LiDAR 3D Services</h2>
+            </div>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="#accueil" class="nav__link">Accueil</a></li>
+                <li><a href="#services" class="nav__link">Services</a></li>
+                <li><a href="#technologie" class="nav__link">Technologie</a></li>
+                <li><a href="#galerie" class="nav__link">Galerie</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Héro -->
+    <section id="accueil" class="hero">
+		<video autoplay loop muted playsinline id="video-bg">
+  <source src="bgdvideo1.mp4" type="video/mp4">
+  <!-- Message alternatif -->
+  Votre navigateur ne supporte pas la vidéo en arrière-plan.
+</video>
+
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Services de Numérisation 3D LiDAR Professionnels</h1>
+                <p class="hero__subtitle">Offrez une nouvelle dimension à vos biens avec des captures 3D précises et immersives.</p>
+                <div class="hero__actions">
+                  <button class="btn btn--primary btn--lg" onclick="scrollToSection('contact')">Demander un devis</button>
+                    <button class="btn btn--outline btn--lg" onclick="scrollToSection('services')">Découvrir nos services</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section__header">
+                <h2>Nos Services</h2>
+                <p>Solutions complètes de numérisation 3D pour tous vos projets</p>
+            </div>
+			
+			
+			
+            <div class="services__grid">
+               
+					<div class="service-card card">
+                     <a href="SERVICES.html" ><div class="service-card__icon">🏠</div>
+                    <div class="card__body">
+                        <h3>Visites Virtuelles 3D</h3>
+                        <p>Créez des visites immersives 360° avec résolution 16K pour l'immobilier et le tourisme</p>
+						</a>
+                    </div>
+                </div>
+			
+                <div class="service-card card">
+                    <a href="SERVICES.html#archi" ><div class="service-card__icon">🏗️</div>
+                    <div class="card__body">
+                        <h3>Numérisation Architecture</h3>
+                        <p>Documentation précise as-built pour projets de construction et rénovation</p>
+						</a>
+                    </div>
+                </div>
+                <div class="service-card card">
+                    <div class="service-card__icon">📐</div>
+                    <div class="card__body">
+                        <h3>Modèles 3D CAD</h3>
+                        <p>Génération automatique de modèles 3D compatibles Autodesk et Revit</p>
+                    </div>
+                </div>
+                <div class="service-card card">
+                    <div class="service-card__icon">📋</div>
+                    <div class="card__body">
+                        <h3>Plans d'Étage</h3>
+                        <p>Plans automatiques précis à partir de scans LiDAR</p>
+                    </div>	
+                </div>
+				<div class="service-card card">
+                    <div class="service-card__icon">🚁</div>
+                    <div class="card__body">
+                        <h3>Prise de vue aérienne</h3>
+                        <p>Créez des visites immersives 360° avec résolution 16K pour l'immobilier et le tourisme</p>
+                    </div>
+            </div>
+			</div>
+
+            <!-- Tarification -->
+            <div class="pricing">
+                <h3>Tarification</h3>
+                <div class="pricing__grid">
+                    <div class="pricing-card card">
+                        <div class="card__body">
+                            <h4>Résidentiel</h4>
+                            <p class="pricing-card__surface">< 200m²</p>
+                            <div class="pricing-card__price">À partir de 800€</div>
+                            <ul class="pricing-card__features">
+                                <li>Visite virtuelle 3D</li>
+                                <li>Plans d'étage</li>
+                                <li>Images panoramiques</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricing-card card">
+                        <div class="card__body">
+                            <h4>Commercial</h4>
+                            <p class="pricing-card__surface">200-1000m²</p>
+                            <div class="pricing-card__price">À partir de 1500€</div>
+                            <ul class="pricing-card__features">
+                                <li>Numérisation complète</li>
+                                <li>Modèles 3D</li>
+                                <li>Documentation as-built</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricing-card card">
+                        <div class="card__body">
+                            <h4>Industriel</h4>
+                            <p class="pricing-card__surface">> 1000m²</p>
+                            <div class="pricing-card__price">Sur devis</div>
+                            <ul class="pricing-card__features">
+                                <li>Scan haute précision</li>
+                                <li>Nuages de points</li>
+                                <li>Support technique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages -->
+    <section class="advantages section">
+		<video autoplay loop muted playsinline id="video-bg2">
+  <source src="advantages.mp4" type="video/mp4">
+  <!-- Message alternatif -->
+  Votre navigateur ne supporte pas la vidéo en arrière-plan.
+</video>
+        <div class="container">
+            <div class="section__header">
+                <h2>Pourquoi Choisir Nos Services ?</h2>
+            </div>
+            <div class="advantages__grid">
+                <div class="advantage-card">
+                    <h3>Précision Millimétrique</h3>
+                    <p>Erreur de mesure < ±20mm à 10m de distance</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Rapidité Extrême</h3>
+                    <p>Scan complet d'une pièce en 20 secondes</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Polyvalence</h3>
+                    <p>Intérieur et extérieur, jour et nuit</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Livraison Rapide</h3>
+                    <p>Résultats traités en 24-48h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologie -->
+    <section id="technologie" class="technology section">
+        <div class="container">
+            <div class="section__header">
+                <h2>Notre Technologie</h2>
+                <p>Caméra RealSee Galois M2 - Le summum de la technologie LiDAR</p>
+            </div>
+            <div class="technology__content">
+                <div class="technology__specs">
+                    <h3>Spécifications Techniques</h3>
+                    <div class="specs__grid">
+                        <div class="spec-item">
+                            <strong>Caméra :</strong> RealSee Galois M2
+                        </div>
+                        <div class="spec-item">
+                            <strong>LiDAR :</strong> 940nm Laser LiDAR Class 1
+                        </div>
+                        <div class="spec-item">
+                            <strong>Résolution :</strong> 16000 x 8000 pixels (134MP)
+                        </div>
+                        <div class="spec-item">
+                            <strong>Portée :</strong> 0.2-25 mètres
+                        </div>
+                        <div class="spec-item">
+                            <strong>Champ de vision :</strong> 360° x 155°
+                        </div>
+                        <div class="spec-item">
+                            <strong>Précision :</strong> < ±20mm (@10m)
+                        </div>
+                        <div class="spec-item">
+                            <strong>Vitesse de scan :</strong> 20,000 points/seconde
+                        </div>
+                        <div class="spec-item">
+                            <strong>Autonomie :</strong> 8 heures d'autonomie
+                        </div>
+                    </div>
+                </div>
+                <div class="technology__benefits">
+                    <h3>Avantages de la Technologie LiDAR</h3>
+                    <ul>
+                        <li>Capture de données 3D en temps réel</li>
+                        <li>Fonctionnement dans toutes les conditions de luminosité</li>
+                        <li>Mesures directes sans contact</li>
+                        <li>Génération automatique de nuages de points</li>
+                        <li>Compatible avec tous les logiciels CAD/BIM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="gallery section">
+        <div class="container">
+            <div class="section__header">
+                <h2>Projets Réalisés</h2>
+                <p>Découvrez quelques exemples de nos réalisations</p>
+            </div>
+            <div class="gallery__content">
+                <div class="gallery__categories">
+                    <div class="gallery-category card">
+                        <div class="card__body2">
+                            <h3>Location Saisonnière</h3>
+                            	<div class="iframe-wrapper">
+                                 <iframe src="https://realsee.ai/8VRRawRP" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category card">
+                        <div class="card__body">
+                            <h3>Immobilier Résidentiel</h3>
+                            <div class="iframe-wrapper">
+                                 <iframe src="https://realsee.ai/qjMMlPWK" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+		 <section id="galerie" class="gallery section">
+        <div class="container">
+           
+            <div class="gallery__content">
+                <div class="gallery__categories">
+                    <div class="gallery-category card">
+                        <div class="card__body2">
+                            <h3>Musée</h3>
+                            	<div class="iframe-wrapper">
+                                 <iframe src="https://realsee.ai/8VRR9e8a" width="100%" height="100%" frameborder="0" scrolling="no" muted allowfullscreen></iframe>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category card">
+                        <div class="card__body">
+                            <h3>Hôtels</h3>
+                            <div class="iframe-wrapper">
+                                 <iframe src="https://realsee.ai/O3eeLx3k" width="100%" height="100%" frameborder="0" scrolling="no" muted allowfullscreen></iframe>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="galerie" class="gallery section">
+        <div class="container">
+           
+            <div class="gallery__content">
+                <div class="gallery__categories">
+                    <div class="gallery-category card">
+                        <div class="card__body2">
+                            <h3>Expositions </h3>
+                            	<div class="iframe-wrapper">
+                                 <iframe src="https://realsee.ai/ZyKKWl3e" width="100%" height="100%" frameborder="0" scrolling="no" muted allowfullscreen></iframe>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category card">
+                        <div class="card__body">
+                            <h3>Restaurants</h3>
+                            <div class="iframe-wrapper">
+                                 <iframe src="https://realsee.ai/49kkWj9x" width="100%" height="100%" frameborder="0" scrolling="no" muted allowfullscreen></iframe>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+    <!-- Contact -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section__header">
+                <h2>Contactez-Nous</h2>
+                <p>Prêt à démarrer votre projet ? Demandez votre devis gratuit</p>
+            </div>
+            <div class="contact__content">
+                <div class="contact__form">
+                    <form id="contact-form" class="form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nom complet *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type" class="form-label">Type de projet *</label>
+                            <select id="project-type" name="project-type" class="form-control" required>
+                                <option value="">Sélectionner un type</option>
+                                <option value="residentiel">Résidentiel (< 200m²)</option>
+                                <option value="commercial">Commercial (200-1000m²)</option>
+                                <option value="industriel">Industriel (> 1000m²)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="surface" class="form-label">Surface approximative (m²)</label>
+                            <input type="number" id="surface" name="surface" class="form-control" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Description du projet *</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" required placeholder="Décrivez votre projet, vos besoins et vos délais..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Envoyer la demande</button>
+                    </form>
+                </div>
+                <div class="contact__info">
+                    <div class="contact-info-card card">
+                        <div class="card__body">
+                            <h3>Informations de Contact</h3>
+                            <div class="contact-item">
+                                <strong>Téléphone :</strong>
+                                <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Email :</strong>
+                                <a href="mailto:contact@lidar3d-services.fr">contact@lidar3d-services.fr</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Adresse :</strong>
+                                <span>123 Avenue de la Technologie, 75001 Paris</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Zone de service :</strong>
+                                <span>Île-de-France et régions limitrophes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3>LiDAR 3D Services</h3>
+                    <p>Spécialiste de la numérisation 3D professionnelle avec technologie LiDAR RealSee</p>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>+33 1 23 45 67 89</p>
+                    <p>contact@lidar3d-services.fr</p>
+                    <p>123 Avenue de la Technologie<br>75001 Paris</p>
+                </div>
+                <div class="footer__services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Visites virtuelles 3D</li>
+                        <li>Numérisation architecture</li>
+                        <li>Modèles 3D CAD</li>
+                        <li>Plans d'étage</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 LiDAR 3D Services. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
