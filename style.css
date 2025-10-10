@@ -993,8 +993,12 @@ select.form-control {
 /* Avantages */
 .advantages {
   position: relative;
-  
-  overflow: hidden;
+  overflow: visible;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  min-height: 50vh; /* minimum en grand écran */
+  height: auto;     /* pour que la hauteur s’adapte au contenu */
+  margin-bottom: 3rem; /* espace vers la section suivante */
  
 }
 
@@ -1002,6 +1006,7 @@ select.form-control {
 @media (min-width: 900px) {
   .advantages {
     height: 50vh;
+	  height: auto;
   }
 }
 
@@ -1011,6 +1016,7 @@ select.form-control {
     height: auto;
     min-height: 0;
     overflow: initial;
+	  margin-bottom: 3rem; /* espace entre sections */
   }
 }
 
@@ -1020,6 +1026,9 @@ select.form-control {
   z-index: 2;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-32);
+  max-width: 100%;         /* ne pas limiter la largeur */
+  overflow-x: visible;     /* pas de découpe horizontale */
+  padding-bottom: 2rem;    /* pour espacer du bas */
   
 }
 
@@ -1045,6 +1054,7 @@ select.form-control {
 /* Technologie */
 .technology {
   background: var(--color-background);
+	z-index: 0;
 }
 
 .technology__content {
