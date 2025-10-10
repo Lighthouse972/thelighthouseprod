@@ -993,16 +993,32 @@ select.form-control {
 /* Avantages */
 .advantages {
   position: relative;
-  height: 50vh;
+  
   overflow: hidden;
  
+}
+
+/* Sur grand écran */
+@media (min-width: 900px) {
+  .advantages {
+    height: 50vh;
+  }
+}
+
+/* Sur mobile/tablette : aucune hauteur fixe ! */
+@media (max-width: 900px) {
+  .advantages {
+    height: auto;
+    min-height: 0;
+    overflow: initial;
+  }
 }
 
 .advantages__grid {
   display: grid;
   position: relative; /* Pour que le contenu apparaisse devant la vidéo */
   z-index: 2;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-32);
   
 }
@@ -1398,10 +1414,10 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 0;      /* S'assure que la vidéo reste derrière le contenu */
+  z-index: 1;      /* S'assure que la vidéo reste derrière le contenu */
   opacity: 0.35;   /* Facultatif : Ajoutez de la transparence pour la lisibilité */
   pointer-events: none; /* Pour que la vidéo ne bloque pas les clics sur les boutons */
 }
@@ -1445,3 +1461,4 @@ html {
 .card__body iframe {
   flex: 1;
 }
+
