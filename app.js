@@ -76,14 +76,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Navigation au clic sur les liens
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            scrollToSection(targetId);
-        });
-    });
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    
+    // Si c'est un ancre interne (commence par #) sur LA MEME PAGE
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      scrollToSection(targetId);
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    } 
+    // Sinon (c'est un lien vers une autre page + ancre)
+    else if (href.indexOf(window.location.pathname) === -1 && href.includes('#')) {
+      // Laisse le navigateur charger la page et faire son scroll
+      // Fermer le menu mobile
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      // Ne pas preventDefault
+    } 
+    else {
+      // Pour lien normal sans ancre
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
+});
+
 
     // Animation des éléments au scroll
     function animateOnScroll() {
