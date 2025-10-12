@@ -79,25 +79,26 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
-    
-    // Si c'est un ancre interne (commence par #) sur LA MEME PAGE
+
+    // Si c'est un lien vers une ancre locale (commence par '#'), on intercepte pour scroll smooth
     if (href.startsWith('#')) {
       e.preventDefault();
       const targetId = href.substring(1);
       scrollToSection(targetId);
+      
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
     } 
-    // Sinon (c'est un lien vers une autre page + ancre)
-    else if (href.indexOf(window.location.pathname) === -1 && href.includes('#')) {
-      // Laisse le navigateur charger la page et faire son scroll
-      // Fermer le menu mobile
+    // Si c'est un lien vers une autre page + ancre, on ne bloque pas
+    else if (href.includes('#')) {
+      // Fermer juste le menu.
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
-      // Ne pas preventDefault
+      // Ne PAS faire preventDefault
+      // Le navigateur fera la navigation et scroll normalement.
     } 
+    // Sinon lien normal
     else {
-      // Pour lien normal sans ancre
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
     }
