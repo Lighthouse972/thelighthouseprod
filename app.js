@@ -134,101 +134,82 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser les animations
     animateOnScroll();
 
-    // Gestion du formulaire de contact
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contact-form');
 
-            // Récupération des données du formulaire
-            const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                projectType: formData.get('project-type'),
-                surface: formData.get('surface'),
-                message: formData.get('message')
-            };
+  function showFormMessage(message, type) {
+    // Supprime les anciens messages
+    const existingMessages = contactForm.querySelectorAll('.form-success, .form-error');
+    existingMessages.forEach(msg => msg.remove());
 
-            // Validation basique
-            if (!data.name || !data.email || !data.message || !data.projectType) {
-                showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
-                return;
-            }
+    // Crée le nouveau message
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-${type}`;
+    messageDiv.textContent = message;
 
-            // Validation de l'email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showFormMessage('Veuillez entrer une adresse email valide.', 'error');
-                return;
-            }
+    // Insère le message en haut du formulaire
+    contactForm.insertBefore(messageDiv, contactForm.firstChild);
 
-            // Simulation d'envoi (dans un vrai projet, vous enverriez les données à votre serveur)
-            simulateFormSubmission(data);
-        });
+    // Scroll automatique vers le message
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Supprime le message après 5 sec si succès
+    if (type === 'success') {
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
     }
+  }
 
-    // Fonction pour afficher les messages du formulaire
-    function showFormMessage(message, type) {
-        // Supprimer les anciens messages
-        const existingMessages = contactForm.querySelectorAll('.form-success, .form-error');
-        existingMessages.forEach(msg => msg.remove());
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-        // Créer le nouveau message
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `form-${type}`;
-        messageDiv.textContent = message;
+      // Récupère les données du formulaire
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        projectType: formData.get('project-type'),
+        surface: formData.get('surface'),
+        message: formData.get('message')
+      };
 
-        // Insérer le message en haut du formulaire
-        contactForm.insertBefore(messageDiv, contactForm.firstChild);
+      // Validation
+      if (!data.name || !data.email || !data.message || !data.projectType) {
+        showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
+        return;
+      }
 
-        // Faire défiler vers le message
-        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(data.email)) {
+        showFormMessage('Veuillez entrer une adresse email valide.', 'error');
+        return;
+      }
 
-        // Supprimer le message après 5 secondes pour les messages de succès
-        if (type === 'success') {
-            setTimeout(() => {
-                messageDiv.remove();
-            }, 5000);
-        }
-    }
+      // Affiche en debug (optionnel)
+      console.log("Données envoyées :", data);
 
-    // Simulation d'envoi de formulaire
-    function simulateFormSubmission(data) {
-        // Afficher un indicateur de chargement
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Envoi en cours...';
-        submitButton.disabled = true;
+      // Envoi vers Apps Script
+      fetch('https://script.google.com/macros/s/AKfycby9nx5vWr45EUbLAR254xuUZAGmqJx-qAGpiGplNN8MiaLoHuLW1o4Id2MsL6cR4SzV/exec', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.text())
+      .then(result => {
+        showFormMessage('Votre demande a bien été envoyée !', 'success');
+        contactForm.reset();
+      })
+      .catch(err => {
+        showFormMessage("Erreur d'envoi, essayez à nouveau.", 'error');
+      });
+    });
+  }
+});
 
-        // Simuler un délai d'envoi
-        setTimeout(() => {
-            // Réinitialiser le bouton
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
 
-            // Simuler un succès (dans un vrai projet, cela dépendrait de la réponse du serveur)
-            const isSuccess = Math.random() > 0.1; // 90% de chance de succès pour la démo
-
-            if (isSuccess) {
-                showFormMessage(
-                    'Votre demande a été envoyée avec succès ! Nous vous contacterons dans les plus brefs délais.',
-                    'success'
-                );
-                
-                // Réinitialiser le formulaire
-                contactForm.reset();
-
-                // Log des données pour la démo (à supprimer en production)
-                console.log('Données du formulaire envoyées:', data);
-            } else {
-                showFormMessage(
-                    'Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer ou nous contacter directement.',
-                    'error'
-                );
-            }
-        }, 2000);
-    }
 
     // Gestion du redimensionnement de la fenêtre
     window.addEventListener('resize', function() {
@@ -334,3 +315,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('- Largeur de fenêtre:', window.innerWidth);
     };
 });
+
