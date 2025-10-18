@@ -134,58 +134,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser les animations
     animateOnScroll();
 
-    document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  function showFormMessage(message, type) {
-    const existingMessages = contactForm.querySelectorAll('.form-success, .form-error');
-    existingMessages.forEach(msg => msg.remove());
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `form-${type}`;
-    messageDiv.textContent = message;
-    contactForm.insertBefore(messageDiv, contactForm.firstChild);
-    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    if (type === 'success') {
-      setTimeout(() => {
-        messageDiv.remove();
-      }, 5000);
+    const formData = new FormData(contactForm);
+
+    // Validation directe sur FormData
+    if (!formData.get('name') || !formData.get('email') || !formData.get('message') || !formData.get('project-type')) {
+      showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
+      return;
     }
-  }
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.get('email'))) {
+      showFormMessage('Veuillez entrer une adresse email valide.', 'error');
+      return;
+    }
 
-      // Récupération et validation classique
-      const formData = new FormData(contactForm);
-      if (!formData.get('name') || !formData.get('email') || !formData.get('message') || !formData.get('project-type')) {
-        showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
-        return;
-      }
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(formData.get('email'))) {
-        showFormMessage('Veuillez entrer une adresse email valide.', 'error');
-        return;
-      }
-
-      // ENVOI via x-www-form-urlencoded : PLUS de CORS
-      fetch('https://script.google.com/macros/s/AKfycbx3s0XfCyoKTqmbUWfyfG5Fv7VhEfy_MiU9_0t0WkXd28GZ6ODoqzkdiGTgLmF4F8AU/exec', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.text())
-      .then(result => {
-        showFormMessage('Votre demande a bien été envoyée !', 'success');
-        contactForm.reset();
-      })
-      .catch(err => {
-        showFormMessage("Erreur d'envoi, essayez à nouveau.", 'error');
-      });
+    // RETIRE les headers : laisse le navigateur gérer automatiquement
+    fetch('https://script.google.com/macros/s/AKfycbxOQ30a8kiDJsk8k6ROkysz8TEW5t4uQ5qvgGQApBc8J_Ibaf2CjarRRp5jciq8nTDt/exec', {
+      method: 'POST',
+      body: formData  // PAS de headers Content-Type !
+    })
+    .then(response => response.text())
+    .then(result => {
+      showFormMessage('Votre demande a bien été envoyée !', 'success');
+      contactForm.reset();
+    })
+    .catch(err => {
+      showFormMessage("Erreur d'envoi, essayez à nouveau.", 'error');
     });
-  }
-});
+  });
+}
 
 
+   
 
     // Gestion du redimensionnement de la fenêtre
     window.addEventListener('resize', function() {
