@@ -159,13 +159,32 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.text())
     .then(result => {
-      showFormMessage('Votre demande a bien été envoyée !', 'success');
-      contactForm.reset();
+      if(result.trim().toLowerCase().includes('ok')) {
+        showFormMessage('Votre demande a bien été envoyée !', 'success');
+        contactForm.reset();
+      } else {
+        showFormMessage("Erreur d'envoi ou réponse inattendue du serveur.", 'error');
+      }
     })
     .catch(err => {
       showFormMessage("Erreur d'envoi, essayez à nouveau.", 'error');
     });
   });
+}
+
+	function showFormMessage(message, type) {
+  const existingMessages = contactForm.querySelectorAll('.form-success, .form-error');
+  existingMessages.forEach(msg => msg.remove());
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `form-${type}`;
+  messageDiv.textContent = message;
+  contactForm.insertBefore(messageDiv, contactForm.firstChild);
+  messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (type === 'success') {
+    setTimeout(() => {
+      messageDiv.remove();
+    }, 5000);
+  }
 }
 
 
