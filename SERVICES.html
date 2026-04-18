@@ -1,297 +1,522 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F03R9NJJKG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  gtag('config', 'G-F03R9NJJKG');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nos Services LiDAR 3D - LiDAR 3D Services</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Styles spécifiques pour cette page */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafd;
-      color: #1f2121;
-      margin: 0;
-      padding: 0;
-    }
-    header, footer {
-      background: #203a43;
-      color: #fff;
-      padding: 1rem 2rem;
-    }
-    header nav a, footer p {
-      color: #eee;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    main {
-      max-width: 1200px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
-    }
-    h1 {
-      font-size: 2.8rem;
-      color: #222;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    h2 {
-      color: #20506b;
-      margin-top: 3rem;
-      margin-bottom: 0.75rem;
-      border-bottom: 3px solid #3399cc;
-      padding-bottom: 0.25rem;
-    }
-    p.intro {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #444;
-      text-align: center;
-    }
-    .service-block {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      padding: 1.75rem 2rem;
-      margin-bottom: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .service-text {
-      flex: 1 1 300px;
-      min-width: 280px;
-    }
-    .service-text h3 {
-      margin-top: 0;
-      color: #165e8a;
-      font-size: 1.6rem;
-    }
-    .service-text p {
-      margin: 0.5rem 0;
-      color: #555;
-      line-height: 1.5;
-    }
-    .service-images {
-      flex: 1 1 280px;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .service-videos {
-      flex: 1 1 280px;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;  
-    }
-    .service-videos video {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      object-fit: cover; 
-    }
-    .service-images img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      object-fit: cover;
-      height: 180px;
-    }
-    @media (max-width: 768px) {
+    <!-- SEO de base -->
+    <title>Nos Services LiDAR 3D | The Lighthouse Prod - Visites virtuelles & plans d'étage</title>
+    <meta name="description" content="Découvrez nos services LiDAR 3D : visites virtuelles immersives, balises interactives, plans d'étage précis, prise de mesures à distance et actifs marketing complets. Technologie RealSee Galois aux Antilles.">
+    <meta name="keywords" content="services LiDAR, visite virtuelle, plan étage, scan 3D, balises interactives, RealSee Galois, Martinique, Guadeloupe">
+    <meta name="author" content="The Lighthouse Prod">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thelighthouseprod.com/SERVICES.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thelighthouseprod.com/SERVICES.html">
+    <meta property="og:title" content="Nos Services LiDAR 3D | The Lighthouse Prod">
+    <meta property="og:description" content="Visites virtuelles, plans d'étage, balises interactives. Technologie RealSee Galois aux Antilles.">
+    <meta property="og:image" content="https://thelighthouseprod.com/Lighthouse%20Icon%20Music%20Studio%20Logo.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Lighthouse%20Icon%20Music%20Studio%20Logo.png">
+    <link rel="apple-touch-icon" href="Lighthouse%20Icon%20Music%20Studio%20Logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F03R9NJJKG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F03R9NJJKG');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Styles spécifiques à la page Services -->
+    <style>
+      body.services-page {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9fafd;
+        color: #1f2121;
+      }
+
+      /* Header / nav : cohérent avec la home */
+      .nav__brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      .nav__brand img {
+        height: 48px;
+        width: auto;
+      }
+      .nav__brand-text h2 {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.1;
+      }
+      .nav__brand-text span {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .nav__cta {
+        margin-left: auto;
+        padding: 0.5rem 1.2rem;
+        background: #206a9e;
+        color: #fff !important;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s ease;
+        white-space: nowrap;
+      }
+      .nav__cta:hover { background: #1b557f; }
+
+      /* Hero Services */
+      .services-hero {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+      .services-hero__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        opacity: 0.35;
+        pointer-events: none;
+      }
+      .services-hero__content {
+        position: relative;
+        z-index: 2;
+        padding: 6rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .services-hero__title {
+        text-align: center;
+        color: #0FC2DA;
+        margin-bottom: 1.5rem;
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1.1;
+        text-shadow: 3px 3px 8px #222, 0 0 20px #fff;
+      }
+      .services-hero__intro {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        line-height: 1.8;
+        color: #FFF5F5;
+        text-align: center;
+        font-weight: 600;
+        text-shadow: 2px 2px 8px #222;
+      }
+
+      /* Main */
+      main.services-main {
+        max-width: 1200px;
+        margin: 2rem auto 4rem;
+        padding: 0 1rem;
+      }
+
+      main.services-main h2 {
+        color: #20506b;
+        margin-top: 3rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 3px solid #3399cc;
+        padding-bottom: 0.25rem;
+      }
+
+      /* Bloc service */
       .service-block {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        padding: 1.75rem 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .service-text {
+        flex: 1 1 300px;
+        min-width: 280px;
+      }
+      .service-text h3 {
+        margin-top: 0;
+        color: #165e8a;
+        font-size: 1.6rem;
+      }
+      .service-text p {
+        margin: 0.75rem 0;
+        color: #555;
+        line-height: 1.6;
+      }
+      .service-videos {
+        flex: 1 1 280px;
+        min-width: 280px;
+        display: flex;
         flex-direction: column;
+        gap: 1rem;
       }
-      .service-images img {
-        height: 200px;
+      .service-videos video {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        object-fit: cover;
       }
-    }
-    a.button-contact {
-      display: inline-block;
-      margin: 2rem auto 0;
-      padding: 0.9rem 2.2rem;
-      background: #206a9e;
-      color: white;
-      font-weight: 600;
-      border-radius: 50px;
-      text-align: center;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    a.button-contact:hover {
-      background: #1b557f;
-    }
-  </style>
-</head>
-<body>
 
+      /* Bloc "possibilités" */
+      .service-possibilities {
+        background: #eef6fb;
+        padding: 2rem;
+        border-radius: 15px;
+        max-width: 1200px;
+        margin: 3rem auto;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+      }
+      .service-possibilities__text {
+        flex: 1 1 320px;
+        min-width: 280px;
+      }
+      .service-possibilities h2 {
+        color: #1a5276;
+        margin-bottom: 1rem;
+        border: none;
+        padding: 0;
+      }
+      .service-possibilities ul {
+        list-style: none;
+        padding-left: 1rem;
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .service-possibilities ul ul {
+        list-style: disc;
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+      }
+
+      /* CTA */
+      .button-contact {
+        display: inline-block;
+        margin: 2rem auto 0;
+        padding: 0.9rem 2.2rem;
+        background: #206a9e;
+        color: white;
+        font-weight: 600;
+        border-radius: 50px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      .button-contact:hover { background: #1b557f; }
+      .cta-wrapper {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      /* Footer */
+      .footer__brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+      .footer__brand-logo img {
+        height: 52px;
+        width: auto;
+      }
+
+      /* Bouton WhatsApp flottant */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+        z-index: 1000;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      }
+      .whatsapp-float svg {
+        width: 32px;
+        height: 32px;
+        fill: #fff;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .services-hero__title { font-size: 2rem; }
+        .services-hero__intro { font-size: 1.1rem; line-height: 1.5; }
+        .services-hero__content { padding: 3rem 1rem; }
+        .service-block { flex-direction: column; padding: 1.25rem 1rem; }
+        .nav__cta { display: none; }
+        .nav__brand img { height: 40px; }
+        .nav__brand-text h2 { font-size: 0.95rem; }
+        .whatsapp-float { width: 54px; height: 54px; bottom: 16px; right: 16px; }
+        .whatsapp-float svg { width: 28px; height: 28px; }
+      }
+    </style>
+</head>
+<body class="services-page">
+
+<!-- Header cohérent avec la home -->
 <header class="header">
-  <nav class="nav container">
-    <div class="nav__brand">
-      <h2>LiDAR 3D Services</h2>
-    </div>
-    <ul class="nav__menu" id="nav-menu">
-      <li><a href="index.html#accueil" class="nav__link">Accueil</a></li>
-      <li><a href="index.html#services" class="nav__link">Services</a></li>
-      <li><a href="index.html#technologie" class="nav__link">Technologie</a></li>
-      <li><a href="index.html#galerie" class="nav__link">Galerie</a></li>
-      <li><a href="index.html#contact" class="nav__link">Contact</a></li>
-    </ul>
-    <div class="nav__toggle" id="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
+    <nav class="nav container">
+        <a href="index.html#accueil" class="nav__brand" aria-label="Accueil - The Lighthouse Prod">
+            <img src="Lighthouse%20Icon%20Music%20Studio%20Logo.png" alt="Logo The Lighthouse Prod">
+            <div class="nav__brand-text">
+                <h2>The Lighthouse Prod</h2>
+                <span>LiDAR 3D Services</span>
+            </div>
+        </a>
+        <ul class="nav__menu" id="nav-menu">
+            <li><a href="index.html#accueil" class="nav__link">Accueil</a></li>
+            <li><a href="index.html#services" class="nav__link">Services</a></li>
+            <li><a href="index.html#technologie" class="nav__link">Technologie</a></li>
+            <li><a href="index.html#galerie" class="nav__link">Galerie</a></li>
+            <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav__cta">Devis gratuit</a>
+        <div class="nav__toggle" id="nav-toggle" role="button" aria-label="Menu" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 </header>
 
-<main>
-  <div class="hero" id="features" style="position: relative; overflow: hidden;">
-  <img 
-    src=" all-2.jpg" 
-    alt="Visite virtuelle d'une maison" 
-    style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%; 
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;      
-      opacity: 0.35;    
-      pointer-events: none;" 
-  />
-  <div class="container" style="position: relative; z-index: 2; padding: 6rem 1rem;">
-  <h1 style="text-align: center; color: #0FC2DAF8; margin-bottom: 1.5rem; font-size: 3rem; font-weight: 900; line-height: 1.1;
-    text-shadow: 3px 3px 8px #222, 0 0 20px #fff;">
-    Découvrez nos Services LiDAR 3D Professionnels
-  </h1>
-  <p class="intro" style="max-width: 700px; margin: 0 auto; font-size: 1.5rem; line-height: 1.8; color: #FFF5F5; text-align: center; font-weight: 600;
-    text-shadow: 2px 2px 8px #222;">
-    Nous vous proposons une gamme complète de services basés sur la technologie RealSee Galois LiDAR, pour transformer vos espaces en modèles 3D précis, immersifs et interactifs.
-  </p>
+<!-- Hero -->
+<div class="services-hero">
+    <img
+        src="all-2.jpg"
+        alt=""
+        class="services-hero__bg"
+        loading="lazy"
+        aria-hidden="true">
+    <div class="services-hero__content">
+        <h1 class="services-hero__title">Découvrez nos Services LiDAR 3D Professionnels</h1>
+        <p class="services-hero__intro">
+            Nous vous proposons une gamme complète de services basés sur la technologie RealSee Galois LiDAR, pour transformer vos espaces en modèles 3D précis, immersifs et interactifs.
+        </p>
+    </div>
 </div>
 
-</div>
+<main class="services-main">
 
-  <section class="service-block">
-    <div class="service-text">
-      <h3>Visites Virtuelles 3D Immersives</h3>
-		<br>
-      <p>
-        Grâce à des caméras infrarouges et la technologie LiDAR avancée, chaque espace est capturé précisément pour créer une maquette 3D en « dollhouse ».  
-      </p>
-		<p>Parallèlement, des plans d’étage traditionnels en top-down sont générés, offrant une compréhension claire de la disposition globale.</p>
-		<p> Ces deux perspectives combinées offrent une immersion sans précédent et un moyen facile de naviguer dans les propriétés, qu’il s’agisse de maisons unifamiliales ou d’immeubles multiservices.</p>
-      
-    </div>
-    <div class="service-videos" style="flex: 1 1 280px; min-width: 280px;">
-      <video autoplay loop muted playsinline id="video-nav">
-        <source src="videos/video-1.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
+    <section class="service-block">
+        <div class="service-text">
+            <h3>Visites Virtuelles 3D Immersives</h3>
+            <p>
+                Grâce à des caméras infrarouges et la technologie LiDAR avancée, chaque espace est capturé précisément pour créer une maquette 3D en « dollhouse ».
+            </p>
+            <p>
+                Parallèlement, des plans d'étage traditionnels en top-down sont générés, offrant une compréhension claire de la disposition globale.
+            </p>
+            <p>
+                Ces deux perspectives combinées offrent une immersion sans précédent et un moyen facile de naviguer dans les propriétés, qu'il s'agisse de maisons unifamiliales ou d'immeubles multiservices.
+            </p>
+        </div>
+        <div class="service-videos">
+            <video loop muted playsinline preload="metadata" class="service-video" aria-label="Démonstration visite virtuelle 3D">
+                <source src="videos/video-1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
 
-  <section class="service-block" style="background:; padding: 2rem 2.5rem; border-radius: 15px; margin-bottom: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem;">
-    <div class="service-text" style="flex: 1 1 320px; min-width: 280px;">
-      <h3 style="color: #165e8a; margin-top: 0;">Balises interactives : un enrichissement de l’UX</h3>
-		<br>
-		<p>Les balises sont des annotations cliquables intégrées dans la visite virtuelle 3D. Elles permettent d’ajouter à la visite des contenus multimédias riches : descriptions, images, vidéos, liens externes, brochures ou toute autre information utile. Ces balises facilitent la mise en lumière des caractéristiques clés de la propriété — qu’il s’agisse d’un détail architectural unique, d’un équipement technologique ou d’un élément décoratif — offrant une expérience plus riche et informative. Elles améliorent la compréhension cliente et dynamisent l’engagement pendant la visite.</p>
-      <p>
-        Pour l'immobilier commercial — centres commerciaux, complexes de bureaux et pôles de vente au détail — l’annotation de modèles clarifie les attributs des zones (ex. : espaces à louer, commodités) et les plans d'étage.
-      </p>
-    </div>
-    <div class="service-videos" style="flex: 1 1 280px; min-width: 280px;">
-      <video autoplay loop muted playsinline id="video-nav">
-        <source src="videos/video-2.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
+    <section class="service-block">
+        <div class="service-text">
+            <h3>Balises interactives : un enrichissement de l'UX</h3>
+            <p>
+                Les balises sont des annotations cliquables intégrées dans la visite virtuelle 3D. Elles permettent d'ajouter à la visite des contenus multimédias riches : descriptions, images, vidéos, liens externes, brochures ou toute autre information utile.
+            </p>
+            <p>
+                Ces balises facilitent la mise en lumière des caractéristiques clés de la propriété — qu'il s'agisse d'un détail architectural unique, d'un équipement technologique ou d'un élément décoratif — offrant une expérience plus riche et informative. Elles améliorent la compréhension cliente et dynamisent l'engagement pendant la visite.
+            </p>
+            <p>
+                Pour l'immobilier commercial — centres commerciaux, complexes de bureaux et pôles de vente au détail — l'annotation de modèles clarifie les attributs des zones (ex. : espaces à louer, commodités) et les plans d'étage.
+            </p>
+        </div>
+        <div class="service-videos">
+            <video loop muted playsinline preload="metadata" class="service-video" aria-label="Démonstration balises interactives">
+                <source src="videos/video-2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
 
-  <section class="service-block" id="archi">
-    <div class="service-text">
-      <h3>Plans d’étage précis &amp; prise de mesures</h3>
-		<br>
-      <p>
-        Obtenez automatiquement un plan d’étage aux mesures exactes de chaque espace, pouvant être exporté ou manipulé pour vos besoins métiers. 
-      </p>
-		<p>Exploitez la prise de mesures à distance : vérifiez des distances, des hauteurs ou des surfaces dans la visite virtuelle, directement au clic, pour une maîtrise complète des lieux. </p>
-      <p>
-        Générez des vidéos personnalisées présentant le parcours de visite que vous avez défini : partagez une immersion sur-mesure, adaptée à chaque client, chaque projet ou chaque communication.
-      </p>
-    </div>
-     <div class="service-videos" style="flex: 1 1 280px; min-width: 280px;">
-      <video autoplay loop muted playsinline id="video-nav">
-        <source src="videos/video-4.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
+    <section class="service-block" id="archi">
+        <div class="service-text">
+            <h3>Plans d'étage précis &amp; prise de mesures</h3>
+            <p>
+                Obtenez automatiquement un plan d'étage aux mesures exactes de chaque espace, pouvant être exporté ou manipulé pour vos besoins métiers.
+            </p>
+            <p>
+                Exploitez la prise de mesures à distance : vérifiez des distances, des hauteurs ou des surfaces dans la visite virtuelle, directement au clic, pour une maîtrise complète des lieux.
+            </p>
+            <p>
+                Générez des vidéos personnalisées présentant le parcours de visite que vous avez défini : partagez une immersion sur-mesure, adaptée à chaque client, chaque projet ou chaque communication.
+            </p>
+        </div>
+        <div class="service-videos">
+            <video loop muted playsinline preload="metadata" class="service-video" aria-label="Démonstration plans d'étage et mesures">
+                <source src="videos/video-4.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
 
-  <section class="service-block">
-    <div class="service-text">
-      <h3>Expérience utilisateur fluide et marketing optimisé</h3>
-		<br>
-      <p>
-        L’expérience proposée est fluide, intuitive et personnalisable, avec des options pour une visite guidée automatique ou une navigation libre. Le système peut mettre en avant automatiquement les zones importantes, aiguiller l’utilisateur et rendre la découverte ludique. 
-      </p>
-		<p>Ce type de visite renforce la confiance, réduit le besoin de visites physiques multiples et accélère la conclusion des ventes ou réservations. </p>
-      <p>
-       C’est un outil marketing précieux pour augmenter la visibilité et la désirabilité de vos biens.
-      </p>
-    </div>
-    <div class="service-videos" style="flex: 1 1 280px; min-width: 280px;">
-      <video autoplay loop muted playsinline id="video-nav">
-        <source src="videos/video-3.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
+    <section class="service-block">
+        <div class="service-text">
+            <h3>Expérience utilisateur fluide et marketing optimisé</h3>
+            <p>
+                L'expérience proposée est fluide, intuitive et personnalisable, avec des options pour une visite guidée automatique ou une navigation libre. Le système peut mettre en avant automatiquement les zones importantes, aiguiller l'utilisateur et rendre la découverte ludique.
+            </p>
+            <p>
+                Ce type de visite renforce la confiance, réduit le besoin de visites physiques multiples et accélère la conclusion des ventes ou réservations.
+            </p>
+            <p>
+                C'est un outil marketing précieux pour augmenter la visibilité et la désirabilité de vos biens.
+            </p>
+        </div>
+        <div class="service-videos">
+            <video loop muted playsinline preload="metadata" class="service-video" aria-label="Démonstration expérience utilisateur">
+                <source src="videos/video-3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
 
-  <section class="service-possibilities" style="background:#eef6fb; padding: 2rem; border-radius: 15px; max-width: 900px; margin: 3rem auto; box-shadow: 0 2px 12px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-    <div style="flex: 1 1 320px; min-width: 280px;">
-      <h2 style="color: #1a5276; margin-bottom: 1rem;">Les possibilités du scan laser Galois</h2>
-      <ul style="list-style: none; padding-left: 1rem; color: #333; font-size: 1.1rem; line-height: 1.6;">
-        <li>✓ Données de précision :</li>
-          <ul style="list-style: disc; margin-left: 2rem; margin-top: 0.5rem;">
-            <li>Nuages de points (.ply, .e57 etc...)</li>
-            <li>Modèles 3D (.obj, .fbx etc...)</li>
-            <li>Compatibilité Autodesk &amp; Cloud Compare, Revit</li>
-          </ul>
-        <li style="margin-top: 1rem;">✓ Actifs marketing complets :</li>
-          <ul style="list-style: disc; margin-left: 2rem; margin-top: 0.5rem;">
-            <li>Tours 3D immersifs</li>
-            <li>Images RAW</li>
-            <li>Panoramas 16K</li>
-            <li>Vidéos & captures 3D</li>
-            <li>Plans d’étage prêts à l’emploi</li>
-          </ul>
-      </ul>
-    </div>
-    <div class="service-videos" style="flex: 1 1 280px; min-width: 280px;">
-      <video autoplay loop muted playsinline id="video-nav">
-        <source src="videos/GALOIS.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
+    <section class="service-possibilities">
+        <div class="service-possibilities__text">
+            <h2>Les possibilités du scan laser Galois</h2>
+            <ul>
+                <li>✓ Données de précision :
+                    <ul>
+                        <li>Nuages de points (.ply, .e57, etc.)</li>
+                        <li>Modèles 3D (.obj, .fbx, etc.)</li>
+                        <li>Compatibilité Autodesk, Cloud Compare, Revit</li>
+                    </ul>
+                </li>
+                <li style="margin-top: 1rem;">✓ Actifs marketing complets :
+                    <ul>
+                        <li>Tours 3D immersifs</li>
+                        <li>Images RAW</li>
+                        <li>Panoramas 16K</li>
+                        <li>Vidéos &amp; captures 3D</li>
+                        <li>Plans d'étage prêts à l'emploi</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="service-videos">
+            <video loop muted playsinline preload="metadata" class="service-video" aria-label="Démonstration caméra RealSee Galois">
+                <source src="videos/GALOIS.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
 
-  <a class="button-contact" href="index.html#contact">Demander un devis ou plus d'informations</a>
+    <div class="cta-wrapper">
+        <a class="button-contact" href="index.html#contact">Demander un devis ou plus d'informations</a>
+    </div>
 </main>
 
-<footer>
-  <p>&copy; 2025 LiDAR 3D Services - Tous droits réservés</p>
+<!-- Footer cohérent avec la home -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <div class="footer__brand">
+                <div class="footer__brand-logo">
+                    <img src="Lighthouse%20Icon%20Music%20Studio%20Logo.png" alt="Logo The Lighthouse Prod">
+                    <div>
+                        <h3 style="margin:0;">The Lighthouse Prod</h3>
+                        <span style="opacity:0.8; font-size:0.85rem;">LiDAR 3D Services</span>
+                    </div>
+                </div>
+                <p>Spécialiste de la numérisation 3D professionnelle avec technologie LiDAR RealSee aux Antilles.</p>
+            </div>
+            <div class="footer__contact">
+                <h4>Contact</h4>
+                <p><a href="tel:+596696226331" style="color:inherit;">+596 696 22 63 31</a></p>
+                <p><a href="mailto:contact@thelighthouseprod.com" style="color:inherit;">contact@thelighthouseprod.com</a></p>
+                <p>Martinique, Guadeloupe, Saint-Martin, Sainte-Lucie</p>
+            </div>
+            <div class="footer__services">
+                <h4>Services</h4>
+                <ul>
+                    <li>Visites virtuelles 3D</li>
+                    <li>Numérisation architecture</li>
+                    <li>Modèles 3D CAD</li>
+                    <li>Images aériennes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 The Lighthouse Prod - LiDAR 3D Services. Tous droits réservés.</p>
+            <p><a href="mentions-legales.html" style="color:inherit; opacity:0.8;">Mentions légales</a> · <a href="politique-confidentialite.html" style="color:inherit; opacity:0.8;">Politique de confidentialité</a></p>
+        </div>
+    </div>
 </footer>
+
+<!-- Bouton WhatsApp flottant -->
+<a href="https://wa.me/596696226331?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20visite%20virtuelle%203D" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+</a>
+
 <script src="app.js"></script>
+
+<!-- Lazy-play des vidéos : ne lance que celles visibles à l'écran -->
+<script>
+    (function() {
+        const videos = document.querySelectorAll('video.service-video');
+        if (!videos.length || !('IntersectionObserver' in window)) {
+            // Fallback : si pas d'IntersectionObserver, on lance tout
+            videos.forEach(v => { v.play().catch(() => {}); });
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        videos.forEach(v => observer.observe(v));
+    })();
+</script>
+
 </body>
 </html>
