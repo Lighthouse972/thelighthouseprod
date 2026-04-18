@@ -1,27 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F03R9NJJKG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F03R9NJJKG');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiDAR 3D Services - Numérisation 3D Professionnelle</title>
+
+    <!-- SEO de base -->
+    <title>The Lighthouse Prod | LiDAR 3D - Visites virtuelles & numérisation 3D aux Antilles</title>
+    <meta name="description" content="Services de numérisation 3D LiDAR professionnels en Martinique, Guadeloupe, Saint-Martin et Sainte-Lucie. Visites virtuelles immersives 16K, plans d'étage précis, modèles 3D CAD avec la technologie RealSee Galois.">
+    <meta name="keywords" content="LiDAR, visite virtuelle 3D, numérisation 3D, RealSee, Martinique, Guadeloupe, immobilier, architecture, plan d'étage, scan 3D">
+    <meta name="author" content="The Lighthouse Prod">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thelighthouseprod.com/">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thelighthouseprod.com/">
+    <meta property="og:title" content="The Lighthouse Prod | LiDAR 3D - Visites virtuelles 3D aux Antilles">
+    <meta property="og:description" content="Transformez vos biens en visites virtuelles immersives 16K. Technologie LiDAR RealSee Galois. Martinique, Guadeloupe, SXM, St Lucia.">
+    <meta property="og:image" content="https://thelighthouseprod.com/Lighthouse_Icon_Music_Studio_Logo.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Lighthouse Prod | LiDAR 3D - Visites virtuelles 3D">
+    <meta name="twitter:description" content="Visites virtuelles immersives 16K aux Antilles. Technologie LiDAR RealSee Galois.">
+    <meta name="twitter:image" content="https://thelighthouseprod.com/Lighthouse_Icon_Music_Studio_Logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Lighthouse_Icon_Music_Studio_Logo.png">
+    <link rel="apple-touch-icon" href="Lighthouse_Icon_Music_Studio_Logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F03R9NJJKG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F03R9NJJKG');
+    </script>
+
+    <!-- Données structurées LocalBusiness (SEO local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "The Lighthouse Prod - LiDAR 3D Services",
+      "image": "https://thelighthouseprod.com/Lighthouse_Icon_Music_Studio_Logo.png",
+      "telephone": "+596696226331",
+      "email": "contact@thelighthouseprod.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ravine Vilaine",
+        "addressLocality": "Fort-de-France",
+        "postalCode": "97200",
+        "addressCountry": "MQ"
+      },
+      "areaServed": ["Martinique", "Guadeloupe", "Saint-Martin", "Sainte-Lucie"],
+      "description": "Services de numérisation 3D LiDAR professionnels avec la technologie RealSee Galois."
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Styles additionnels pour les nouveautés (bouton WhatsApp, logo header, etc.) -->
+    <style>
+      /* Logo + double branding dans le header */
+      .nav__brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      .nav__brand img {
+        height: 48px;
+        width: auto;
+      }
+      .nav__brand-text h2 {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.1;
+      }
+      .nav__brand-text span {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      /* CTA dans le header */
+      .nav__cta {
+        margin-left: auto;
+        padding: 0.5rem 1.2rem;
+        background: var(--color-primary, #21808d);
+        color: #fff !important;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s ease;
+        white-space: nowrap;
+      }
+      .nav__cta:hover {
+        background: var(--color-primary-hover, #1d7480);
+      }
+
+      /* Bouton WhatsApp flottant */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+        z-index: 1000;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      }
+      .whatsapp-float svg {
+        width: 32px;
+        height: 32px;
+        fill: #fff;
+      }
+
+      /* Feedback du formulaire */
+      .form-success, .form-error {
+        padding: 0.9rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+      .form-success {
+        background: #d1fae5;
+        color: #065f46;
+        border-left: 4px solid #10b981;
+      }
+      .form-error {
+        background: #fee2e2;
+        color: #991b1b;
+        border-left: 4px solid #ef4444;
+      }
+      button[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      /* Estimation de prix */
+      .price-estimate {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #eef6fb;
+        border-left: 4px solid #3399cc;
+        border-radius: 6px;
+        font-weight: 600;
+        color: #165e8a;
+        display: none;
+      }
+      .price-estimate.active {
+        display: block;
+      }
+
+      /* Footer branding */
+      .footer__brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+      .footer__brand-logo img {
+        height: 52px;
+        width: auto;
+      }
+
+      @media (max-width: 768px) {
+        .nav__cta {
+          display: none;
+        }
+        .nav__brand-text h2 {
+          font-size: 0.95rem;
+        }
+        .nav__brand img {
+          height: 40px;
+        }
+        .whatsapp-float {
+          width: 54px;
+          height: 54px;
+          bottom: 16px;
+          right: 16px;
+        }
+        .whatsapp-float svg {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
-            <div class="nav__brand">
-                <h2>LiDAR 3D Services</h2>
-            </div>
+            <a href="#accueil" class="nav__brand" aria-label="Accueil - The Lighthouse Prod">
+                <img src="Lighthouse_Icon_Music_Studio_Logo.png" alt="Logo The Lighthouse Prod">
+                <div class="nav__brand-text">
+                    <h2>The Lighthouse Prod</h2>
+                    <span>LiDAR 3D Services</span>
+                </div>
+            </a>
             <ul class="nav__menu" id="nav-menu">
                 <li><a href="#accueil" class="nav__link">Accueil</a></li>
                 <li><a href="#services" class="nav__link">Services</a></li>
@@ -29,7 +221,8 @@
                 <li><a href="#galerie" class="nav__link">Galerie</a></li>
                 <li><a href="#contact" class="nav__link">Contact</a></li>
             </ul>
-            <div class="nav__toggle" id="nav-toggle">
+            <a href="#contact" class="nav__cta">Devis gratuit</a>
+            <div class="nav__toggle" id="nav-toggle" role="button" aria-label="Menu" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -39,19 +232,18 @@
 
     <!-- Section Héro -->
     <section id="accueil" class="hero">
-		<video autoplay loop muted playsinline id="video-bg">
-  <source src="videos/bgdvideo1.mp4" type="video/mp4">
-  <!-- Message alternatif -->
-  Votre navigateur ne supporte pas la vidéo en arrière-plan.
-</video>
+        <video autoplay loop muted playsinline id="video-bg" aria-hidden="true">
+            <source src="videos/bgdvideo1.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo en arrière-plan.
+        </video>
 
         <div class="container">
             <div class="hero__content">
                 <h1 class="hero__title">Services de Numérisation 3D LiDAR Professionnels</h1>
                 <p class="hero__subtitle">Offrez une nouvelle dimension à vos biens avec des captures 3D précises et immersives.</p>
                 <div class="hero__actions">
-                  <button class="btn btn--primary btn--lg" onclick="scrollToSection('contact')">Demander un devis</button>
-                    <button class="btn btn--outline btn--lg" onclick="scrollToSection('services')">Découvrir nos services</button>
+                    <a href="#contact" class="btn btn--primary btn--lg">Demander un devis</a>
+                    <a href="#services" class="btn btn--outline btn--lg">Découvrir nos services</a>
                 </div>
             </div>
         </div>
@@ -64,50 +256,48 @@
                 <h2>Nos Services</h2>
                 <p>Solutions complètes de numérisation 3D pour tous vos projets</p>
             </div>
-			
-			
-			
+
             <div class="services__grid">
-               
-					<div class="service-card card">
-                     <a href="SERVICES.html" ><div class="service-card__icon">🏠</div>
+                <a href="SERVICES.html" class="service-card card">
+                    <div class="service-card__icon">🏠</div>
                     <div class="card__body">
                         <h3>Visites Virtuelles 3D</h3>
                         <p>Créez des visites immersives 360° avec résolution 16K pour l'immobilier et le tourisme</p>
-						</a>
                     </div>
-                </div>
-			
-                <div class="service-card card">
-                    <a href="SERVICES.html#archi" ><div class="service-card__icon">🏗️</div>
+                </a>
+
+                <a href="SERVICES.html#archi" class="service-card card">
+                    <div class="service-card__icon">🏗️</div>
                     <div class="card__body">
                         <h3>Numérisation Architecture</h3>
                         <p>Documentation précise as-built pour projets de construction et rénovation</p>
-						</a>
                     </div>
-                </div>
-                <div class="service-card card">
+                </a>
+
+                <a href="SERVICES.html" class="service-card card">
                     <div class="service-card__icon">📐</div>
                     <div class="card__body">
                         <h3>Modèles 3D CAD</h3>
                         <p>Génération automatique de modèles 3D compatibles Autodesk et Revit</p>
                     </div>
-                </div>
-                <div class="service-card card">
+                </a>
+
+                <a href="SERVICES.html#archi" class="service-card card">
                     <div class="service-card__icon">📋</div>
                     <div class="card__body">
                         <h3>Plans d'Étage</h3>
                         <p>Plans automatiques précis à partir de scans LiDAR</p>
-                    </div>	
-                </div>
-				<div class="service-card card">
+                    </div>
+                </a>
+
+                <a href="SERVICES.html" class="service-card card">
                     <div class="service-card__icon">🚁</div>
                     <div class="card__body">
                         <h3>Prise de vue aérienne</h3>
-                        <p>Créez des visites immersives 360° avec résolution 16K pour l'immobilier et le tourisme</p>
+                        <p>Captures aériennes haute définition pour compléter vos visites 3D</p>
                     </div>
+                </a>
             </div>
-			</div>
 
             <!-- Tarification -->
             <div class="pricing">
@@ -116,7 +306,7 @@
                     <div class="pricing-card card">
                         <div class="card__body">
                             <h4>Résidentiel</h4>
-                            <p class="pricing-card__surface"> inf 200m²</p>
+                            <p class="pricing-card__surface">&lt; 200 m²</p>
                             <div class="pricing-card__price">À partir de 200€</div>
                             <ul class="pricing-card__features">
                                 <li>Visite virtuelle 3D</li>
@@ -128,7 +318,7 @@
                     <div class="pricing-card card">
                         <div class="card__body">
                             <h4>Commercial</h4>
-                            <p class="pricing-card__surface">200-1000m²</p>
+                            <p class="pricing-card__surface">200 – 1000 m²</p>
                             <div class="pricing-card__price">À partir de 1100€</div>
                             <ul class="pricing-card__features">
                                 <li>Numérisation complète</li>
@@ -140,7 +330,7 @@
                     <div class="pricing-card card">
                         <div class="card__body">
                             <h4>Industriel</h4>
-                            <p class="pricing-card__surface">> 1000m²</p>
+                            <p class="pricing-card__surface">&gt; 1000 m²</p>
                             <div class="pricing-card__price">Sur devis</div>
                             <ul class="pricing-card__features">
                                 <li>Scan haute précision</li>
@@ -156,11 +346,10 @@
 
     <!-- Avantages -->
     <section class="advantages section">
-		<video autoplay loop muted playsinline id="video-bg2">
-  <source src="videos/advantages.mp4" type="video/mp4">
-  <!-- Message alternatif -->
-  Votre navigateur ne supporte pas la vidéo en arrière-plan.
-</video>
+        <video autoplay loop muted playsinline id="video-bg2" aria-hidden="true">
+            <source src="videos/advantages.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo en arrière-plan.
+        </video>
         <div class="container">
             <div class="section__header">
                 <h2>Pourquoi Choisir Nos Services ?</h2>
@@ -168,46 +357,38 @@
             <div class="advantages__grid">
                 <div class="advantage-card">
                     <h3>Immobilier Résidentiel et Transactions</h3>
-  <ul style="list-style: disc inside; padding-left: 1rem; text-align: left; margin: 0;">
-    <li><strong>Vendez en un temps record</strong> grâce à des visites virtuelles immersives et détaillées qui captivent vos acheteurs dès le premier contact.</li>
-	  <br>
-    <li><strong>Boostez</strong> <strong>vos réservations</strong> et visites en offrant à vos clients la possibilité de visiter les biens quand bon leur semble, sans contraintes horaires ni déplacements.</li>
-	   <br>
-    <li><strong>Réduisez le nombre de visites physiques</strong> : gagnez un temps précieux avec des clients déjà convaincus par la qualité des visites virtuelles et des plans précis.</li>
-  </ul>
+                    <ul>
+                        <li><strong>Vendez en un temps record</strong> grâce à des visites virtuelles immersives et détaillées qui captivent vos acheteurs dès le premier contact.</li>
+                        <li><strong>Boostez vos réservations</strong> et visites en offrant à vos clients la possibilité de visiter les biens quand bon leur semble, sans contraintes horaires ni déplacements.</li>
+                        <li><strong>Réduisez le nombre de visites physiques</strong> : gagnez un temps précieux avec des clients déjà convaincus par la qualité des visites virtuelles et des plans précis.</li>
+                    </ul>
                 </div>
-<div class="advantage-card">
-  <h3>Hôtels</h3>
-  <ul style="list-style: disc inside; padding-left: 1rem; text-align: left; margin: 0;">
-    <li><strong>Attirez plus de réservations</strong> grâce à des visites virtuelles immersives permettant aux clients de découvrir chaque chambre et ambiance sans se déplacer.</li>
-    <br><br>
-    <li><strong>Mettez en valeur tous vos espaces</strong> : halls, suites, spa, restaurant, grâce à des panoramas 16K et des prises de vue 3D spectaculaires.</li>
-    <br><br>
-    <li><strong>Renforcez la confiance et la décision</strong> : offrez une expérience transparente où chaque détail devient accessible et rassurant pour vos futurs clients.</li>
-  </ul>
-</div>
 
-<div class="advantage-card">
-  <h3>Commerces</h3>
-  <ul style="list-style: disc inside; padding-left: 1rem; text-align: left; margin: 0;">
-    <li><strong>Intégration Google Street View</strong> : augmentez la visibilité de votre boutique avec une visite immersive directement depuis Google Maps.</li>
-    <br><br>
-    <li><strong>Étiquettes et zones interactives</strong> : mettez en avant vos produits grâce à des balises informatives, définissez des parcours guidés et organisez visuellement toutes vos zones de vente.</li>
-    <br><br>
-    <li><strong>Vidéos fondues & lancement de produits</strong> : intégrez facilement des vidéos promotionnelles pour présenter des nouveautés ou des animations dans la visite virtuelle.</li>
-  </ul>
-</div>
+                <div class="advantage-card">
+                    <h3>Hôtels</h3>
+                    <ul>
+                        <li><strong>Attirez plus de réservations</strong> grâce à des visites virtuelles immersives permettant aux clients de découvrir chaque chambre et ambiance sans se déplacer.</li>
+                        <li><strong>Mettez en valeur tous vos espaces</strong> : halls, suites, spa, restaurant, grâce à des panoramas 16K et des prises de vue 3D spectaculaires.</li>
+                        <li><strong>Renforcez la confiance et la décision</strong> : offrez une expérience transparente où chaque détail devient accessible et rassurant pour vos futurs clients.</li>
+                    </ul>
+                </div>
 
-<div class="advantage-card">
-<h3>Musées et Galeries d’Art</h3>
-  <ul style="list-style: disc inside; padding-left: 1rem; text-align: left; margin: 0;">
-    <li><strong>Conservez et valorisez vos collections</strong> grâce à des scans 3D précis et des répliques virtuelles fidèles.</li>
-	  	  <br>	  
-	  	  <br>
-    <li><strong>Offrez des visites virtuelles</strong> immersives accessibles à un large public, partout dans le monde.</li>
-	  	  <br>	  
-	  	  <br>
-    <li><strong>Facilitez l’archivage et la restauration</strong> grâce à des modèles 3D exploitables pour le suivi des œuvres et espaces.</li>
+                <div class="advantage-card">
+                    <h3>Commerces</h3>
+                    <ul>
+                        <li><strong>Intégration Google Street View</strong> : augmentez la visibilité de votre boutique avec une visite immersive directement depuis Google Maps.</li>
+                        <li><strong>Étiquettes et zones interactives</strong> : mettez en avant vos produits grâce à des balises informatives, définissez des parcours guidés et organisez visuellement toutes vos zones de vente.</li>
+                        <li><strong>Vidéos fondues & lancement de produits</strong> : intégrez facilement des vidéos promotionnelles pour présenter des nouveautés ou des animations dans la visite virtuelle.</li>
+                    </ul>
+                </div>
+
+                <div class="advantage-card">
+                    <h3>Musées et Galeries d'Art</h3>
+                    <ul>
+                        <li><strong>Conservez et valorisez vos collections</strong> grâce à des scans 3D précis et des répliques virtuelles fidèles.</li>
+                        <li><strong>Offrez des visites virtuelles</strong> immersives accessibles à un large public, partout dans le monde.</li>
+                        <li><strong>Facilitez l'archivage et la restauration</strong> grâce à des modèles 3D exploitables pour le suivi des œuvres et espaces.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -224,30 +405,14 @@
                 <div class="technology__specs">
                     <h3>Spécifications Techniques</h3>
                     <div class="specs__grid">
-                        <div class="spec-item">
-                            <strong>Caméra :</strong> RealSee Galois M2
-                        </div>
-                        <div class="spec-item">
-                            <strong>LiDAR :</strong> 940nm Laser LiDAR Class 1
-                        </div>
-                        <div class="spec-item">
-                            <strong>Résolution :</strong> 16000 x 8000 pixels (134MP)
-                        </div>
-                        <div class="spec-item">
-                            <strong>Portée :</strong> 0.2-25 mètres
-                        </div>
-                        <div class="spec-item">
-                            <strong>Champ de vision :</strong> 360° x 155°
-                        </div>
-                        <div class="spec-item">
-                            <strong>Précision :</strong> < ±20mm (@10m)
-                        </div>
-                        <div class="spec-item">
-                            <strong>Vitesse de scan :</strong> 20,000 points/seconde
-                        </div>
-                        <div class="spec-item">
-                            <strong>Autonomie :</strong> 8 heures d'autonomie
-                        </div>
+                        <div class="spec-item"><strong>Caméra :</strong> RealSee Galois M2</div>
+                        <div class="spec-item"><strong>LiDAR :</strong> 940nm Laser LiDAR Class 1</div>
+                        <div class="spec-item"><strong>Résolution :</strong> 16000 x 8000 pixels (134MP)</div>
+                        <div class="spec-item"><strong>Portée :</strong> 0.2 - 25 mètres</div>
+                        <div class="spec-item"><strong>Champ de vision :</strong> 360° x 155°</div>
+                        <div class="spec-item"><strong>Précision :</strong> &lt; ±20mm (@10m)</div>
+                        <div class="spec-item"><strong>Vitesse de scan :</strong> 20 000 points/seconde</div>
+                        <div class="spec-item"><strong>Autonomie :</strong> 8 heures</div>
                     </div>
                 </div>
                 <div class="technology__benefits">
@@ -264,8 +429,7 @@
         </div>
     </section>
 
-    <!-- Galerie -->
-		
+    <!-- Galerie (fusionnée - une seule section) -->
     <section id="galerie" class="gallery section">
         <div class="container">
             <div class="section__header">
@@ -277,60 +441,42 @@
                     <div class="gallery-category card">
                         <div class="card__body2">
                             <h3>Location Saisonnière</h3>
-                            	<div class="iframe-wrapper">
-                                 <iframe src="https://realsee.ai/8VRRawRP" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-                              </div>
+                            <div class="iframe-wrapper">
+                                <iframe src="https://realsee.ai/8VRRawRP" width="100%" height="100%" frameborder="0" scrolling="no" loading="lazy" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups" title="Visite virtuelle - Location saisonnière"></iframe>
+                            </div>
                         </div>
                     </div>
+
                     <div class="gallery-category card">
                         <div class="card__body">
                             <h3>Immobilier Résidentiel</h3>
                             <div class="iframe-wrapper">
-                                 <iframe src="https://realsee.ai/qjMMlPWK" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-                              </div>
+                                <iframe src="https://realsee.ai/qjMMlPWK" width="100%" height="100%" frameborder="0" scrolling="no" loading="lazy" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups" title="Visite virtuelle - Immobilier résidentiel"></iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-		<section id="galerie" class="gallery section">
-        <div class="container">
-           
-            <div class="gallery__content">
-                <div class="gallery__categories">
+
                     <div class="gallery-category card">
                         <div class="card__body2">
-                            <h3>Villa Type </h3>
-                            	<div class="iframe-wrapper">
-                                 <iframe src="https://realsee.ai/xGWWylym" width="100%" height="100%" frameborder="0" scrolling="no" muted allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-                          </div>
-                      </div>
+                            <h3>Villa Type</h3>
+                            <div class="iframe-wrapper">
+                                <iframe src="https://realsee.ai/xGWWylym" width="100%" height="100%" frameborder="0" scrolling="no" loading="lazy" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups" title="Visite virtuelle - Villa type"></iframe>
+                            </div>
+                        </div>
                     </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-		 <section id="galerie" class="gallery section">
-        <div class="container">
-           
-            <div class="gallery__content">
-                <div class="gallery__categories">
+
                     <div class="gallery-category card">
                         <div class="card__body">
                             <h3>Hôtels</h3>
                             <div class="iframe-wrapper">
-                                 <iframe src="https://realsee.ai/O3eeLx3k" width="100%" height="100%" frameborder="0" scrolling="no" muted allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-                              </div>
+                                <iframe src="https://realsee.ai/O3eeLx3k" width="100%" height="100%" frameborder="0" scrolling="no" loading="lazy" allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups" title="Visite virtuelle - Hôtels"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
-   
 
     <!-- Contact -->
     <section id="contact" class="contact section">
@@ -341,37 +487,38 @@
             </div>
             <div class="contact__content">
                 <div class="contact__form">
-                    <form id="contact-form" class="form">
+                    <form id="contact-form" class="form" novalidate>
                         <div class="form-group">
                             <label for="name" class="form-label">Nom complet *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="phone" class="form-label">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
+                            <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel">
                         </div>
                         <div class="form-group">
                             <label for="project-type" class="form-label">Type de projet *</label>
                             <select id="project-type" name="project-type" class="form-control" required>
                                 <option value="">Sélectionner un type</option>
-                                <option value="residentiel">Résidentiel (inf 200m²)</option>
-                                <option value="commercial">Commercial (200-1000m²)</option>
-                                <option value="industriel">Industriel (> 1000m²)</option>
+                                <option value="residentiel">Résidentiel (&lt; 200 m²)</option>
+                                <option value="commercial">Commercial (200 – 1000 m²)</option>
+                                <option value="industriel">Industriel (&gt; 1000 m²)</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="surface" class="form-label">Surface approximative (m²)</label>
                             <input type="number" id="surface" name="surface" class="form-control" min="1">
+                            <div id="price-estimate" class="price-estimate"></div>
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Description du projet *</label>
                             <textarea id="message" name="message" class="form-control" rows="4" required placeholder="Décrivez votre projet, vos besoins et vos délais..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn--primary btn--full-width">Envoyer la demande</button>
+                        <button type="submit" class="btn btn--primary btn--full-width" id="submit-btn">Envoyer la demande</button>
                     </form>
                 </div>
                 <div class="contact__info">
@@ -380,7 +527,11 @@
                             <h3>Informations de Contact</h3>
                             <div class="contact-item">
                                 <strong>Téléphone :</strong>
-                                <a href="tel:+33123456789">+596 696 17 85 06</a>
+                                <a href="tel:+596696226331">+596 696 22 63 31</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>WhatsApp :</strong>
+                                <a href="https://wa.me/596696226331?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20visite%20virtuelle%203D" target="_blank" rel="noopener">+596 696 22 63 31</a>
                             </div>
                             <div class="contact-item">
                                 <strong>Email :</strong>
@@ -392,7 +543,7 @@
                             </div>
                             <div class="contact-item">
                                 <strong>Zone de service :</strong>
-                                <span>Martinique, Guadeloupe, Saint Martin, St Lucia</span>
+                                <span>Martinique, Guadeloupe, Saint-Martin, Sainte-Lucie</span>
                             </div>
                         </div>
                     </div>
@@ -406,14 +557,20 @@
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">
-                    <h3>LiDAR 3D Services</h3>
-                    <p>Spécialiste de la numérisation 3D professionnelle avec technologie LiDAR RealSee</p>
+                    <div class="footer__brand-logo">
+                        <img src="Lighthouse_Icon_Music_Studio_Logo.png" alt="Logo The Lighthouse Prod">
+                        <div>
+                            <h3 style="margin:0;">The Lighthouse Prod</h3>
+                            <span style="opacity:0.8; font-size:0.85rem;">LiDAR 3D Services</span>
+                        </div>
+                    </div>
+                    <p>Spécialiste de la numérisation 3D professionnelle avec technologie LiDAR RealSee aux Antilles.</p>
                 </div>
                 <div class="footer__contact">
                     <h4>Contact</h4>
-                    <p>+596 696 226331</p>
-                    <p>contact@thelighthouseprod.com</p>
-                    <p>Martinique, Guadeloupe, SXM<br></p>
+                    <p><a href="tel:+596696226331" style="color:inherit;">+596 696 22 63 31</a></p>
+                    <p><a href="mailto:contact@thelighthouseprod.com" style="color:inherit;">contact@thelighthouseprod.com</a></p>
+                    <p>Martinique, Guadeloupe, Saint-Martin, Sainte-Lucie</p>
                 </div>
                 <div class="footer__services">
                     <h4>Services</h4>
@@ -421,16 +578,23 @@
                         <li>Visites virtuelles 3D</li>
                         <li>Numérisation architecture</li>
                         <li>Modèles 3D CAD</li>
-                        <li>Images Aériennes</li>
+                        <li>Images aériennes</li>
                     </ul>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 LiDAR 3D Services. Tous droits réservés.</p>
-				<p>Designed by The LightHouseProd</p>
+                <p>&copy; 2025 The Lighthouse Prod - LiDAR 3D Services. Tous droits réservés.</p>
+                <p><a href="mentions-legales.html" style="color:inherit; opacity:0.8;">Mentions légales</a> · <a href="politique-confidentialite.html" style="color:inherit; opacity:0.8;">Politique de confidentialité</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/596696226331?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20visite%20virtuelle%203D" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
 
     <script src="app.js"></script>
 </body>

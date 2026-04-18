@@ -8,36 +8,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
 
     // Toggle menu mobile
-    navToggle.addEventListener('click', function() {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Fermer le menu mobile au clic sur un lien
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
-    });
 
-    // Fermer le menu mobile au clic à l'extérieur
-    document.addEventListener('click', function(e) {
-        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
+        // Fermer le menu mobile au clic à l'extérieur
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
 
-    // Effet de scroll sur le header
+    // Effet de scroll sur le header + mise à jour du lien actif
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-
-        // Mise à jour du lien actif dans la navigation
         updateActiveNavLink();
     });
 
@@ -62,13 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fonction de scroll fluide vers une section
+    // Scroll fluide vers une section
     window.scrollToSection = function(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
             const headerHeight = header.offsetHeight;
             const sectionTop = section.offsetTop - headerHeight;
-
             window.scrollTo({
                 top: sectionTop,
                 behavior: 'smooth'
@@ -76,40 +67,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Gestion des clics sur les liens de navigation
     navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-
-    // Si c'est un lien vers une ancre locale (commence par '#'), on intercepte pour scroll smooth
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      scrollToSection(targetId);
-      
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-    } 
-    // Si c'est un lien vers une autre page + ancre, on ne bloque pas
-    else if (href.includes('#')) {
-      // Fermer juste le menu.
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-      // Ne PAS faire preventDefault
-      // Le navigateur fera la navigation et scroll normalement.
-    } 
-    // Sinon lien normal
-    else {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-    }
-  });
-});
-
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                scrollToSection(targetId);
+                if (navToggle) navToggle.classList.remove('active');
+                if (navMenu) navMenu.classList.remove('active');
+            } else {
+                if (navToggle) navToggle.classList.remove('active');
+                if (navMenu) navMenu.classList.remove('active');
+            }
+        });
+    });
 
     // Animation des éléments au scroll
     function animateOnScroll() {
         const elements = document.querySelectorAll('.card, .advantage-card, .service-card, .pricing-card, .testimonial-card, .gallery-category');
-        
+
         elements.forEach((element, index) => {
             element.classList.add('animate-on-scroll');
             element.style.transitionDelay = `${index * 0.1}s`;
@@ -126,148 +104,160 @@ document.addEventListener('DOMContentLoaded', function() {
             rootMargin: '0px 0px -50px 0px'
         });
 
-        elements.forEach(element => {
-            observer.observe(element);
+        elements.forEach(element => observer.observe(element));
+    }
+
+    animateOnScroll();
+
+    // Gestion du formulaire de contact
+    if (contactForm) {
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+
+            // Validation
+            if (!formData.get('name') || !formData.get('email') || !formData.get('message') || !formData.get('project-type')) {
+                showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.get('email'))) {
+                showFormMessage('Veuillez entrer une adresse email valide.', 'error');
+                return;
+            }
+
+            // Feedback visuel : bouton désactivé + texte
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+
+            fetch('https://script.google.com/macros/s/AKfycbxOQ30a8kiDJsk8k6ROkysz8TEW5t4uQ5qvgGQApBc8J_Ibaf2CjarRRp5jciq8nTDt/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result.trim().toLowerCase().includes('ok')) {
+                    showFormMessage('Votre demande a bien été envoyée ! Nous vous recontacterons rapidement.', 'success');
+                    contactForm.reset();
+                    hidePriceEstimate();
+                } else {
+                    showFormMessage("Erreur d'envoi ou réponse inattendue du serveur.", 'error');
+                }
+            })
+            .catch(err => {
+                showFormMessage("Erreur d'envoi, veuillez réessayer ou nous contacter par WhatsApp.", 'error');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
         });
     }
 
-    // Initialiser les animations
-    animateOnScroll();
-
-    if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-
-    // Validation directe sur FormData
-    if (!formData.get('name') || !formData.get('email') || !formData.get('message') || !formData.get('project-type')) {
-      showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.get('email'))) {
-      showFormMessage('Veuillez entrer une adresse email valide.', 'error');
-      return;
-    }
-
-    // RETIRE les headers : laisse le navigateur gérer automatiquement
-    fetch('https://script.google.com/macros/s/AKfycbxOQ30a8kiDJsk8k6ROkysz8TEW5t4uQ5qvgGQApBc8J_Ibaf2CjarRRp5jciq8nTDt/exec', {
-      method: 'POST',
-      body: formData  // PAS de headers Content-Type !
-    })
-    .then(response => response.text())
-    .then(result => {
-      if(result.trim().toLowerCase().includes('ok')) {
-        showFormMessage('Votre demande a bien été envoyée !', 'success');
-        contactForm.reset();
-      } else {
-        showFormMessage("Erreur d'envoi ou réponse inattendue du serveur.", 'error');
-      }
-    })
-    .catch(err => {
-      showFormMessage("Erreur d'envoi, essayez à nouveau.", 'error');
-    });
-  });
-}
-
-	function showFormMessage(message, type) {
-  const existingMessages = contactForm.querySelectorAll('.form-success, .form-error');
-  existingMessages.forEach(msg => msg.remove());
-  const messageDiv = document.createElement('div');
-  messageDiv.className = `form-${type}`;
-  messageDiv.textContent = message;
-  contactForm.insertBefore(messageDiv, contactForm.firstChild);
-  messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  if (type === 'success') {
-    setTimeout(() => {
-      messageDiv.remove();
-    }, 5000);
-  }
-}
-
-
-   
-
-    // Gestion du redimensionnement de la fenêtre
-    window.addEventListener('resize', function() {
-        // Fermer le menu mobile si la fenêtre devient plus large
-        if (window.innerWidth > 768) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+    function showFormMessage(message, type) {
+        if (!contactForm) return;
+        const existingMessages = contactForm.querySelectorAll('.form-success, .form-error');
+        existingMessages.forEach(msg => msg.remove());
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `form-${type}`;
+        messageDiv.setAttribute('role', type === 'error' ? 'alert' : 'status');
+        messageDiv.textContent = message;
+        contactForm.insertBefore(messageDiv, contactForm.firstChild);
+        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (type === 'success') {
+            setTimeout(() => messageDiv.remove(), 6000);
         }
-    });
+    }
 
-    // Fonction utilitaire pour calculer le prix estimatif (bonus)
+    // Estimation de prix affichée à l'écran
+    const surfaceInput = document.getElementById('surface');
+    const projectTypeSelect = document.getElementById('project-type');
+    const priceEstimateDiv = document.getElementById('price-estimate');
+
+    function hidePriceEstimate() {
+        if (priceEstimateDiv) {
+            priceEstimateDiv.classList.remove('active');
+            priceEstimateDiv.textContent = '';
+        }
+    }
+
     window.calculateEstimatedPrice = function() {
-        const projectType = document.getElementById('project-type').value;
-        const surface = document.getElementById('surface').value;
+        if (!projectTypeSelect || !surfaceInput || !priceEstimateDiv) return;
+        const projectType = projectTypeSelect.value;
+        const surface = parseFloat(surfaceInput.value);
 
-        if (!projectType || !surface) return;
+        if (!projectType || !surface || surface <= 0) {
+            hidePriceEstimate();
+            return;
+        }
 
         let pricePerM2;
+        let minPrice;
         switch (projectType) {
             case 'residentiel':
-                pricePerM2 = 4; // 4€/m²
+                pricePerM2 = 4;
+                minPrice = 200;
                 break;
             case 'commercial':
-                pricePerM2 = 2.5; // 2.5€/m²
+                pricePerM2 = 2.5;
+                minPrice = 1100;
                 break;
             case 'industriel':
-                pricePerM2 = 2; // 2€/m²
-                break;
+                priceEstimateDiv.classList.add('active');
+                priceEstimateDiv.innerHTML = '💡 Projet industriel : tarif sur devis personnalisé.';
+                return;
             default:
+                hidePriceEstimate();
                 return;
         }
 
-        const estimatedPrice = Math.max(800, surface * pricePerM2);
-        
-        // Afficher le prix estimatif (vous pouvez personnaliser ceci)
-        console.log(`Prix estimatif: ${estimatedPrice.toLocaleString('fr-FR')}€`);
+        const estimatedPrice = Math.max(minPrice, surface * pricePerM2);
+        priceEstimateDiv.classList.add('active');
+        priceEstimateDiv.innerHTML = `💡 Estimation indicative : <strong>${estimatedPrice.toLocaleString('fr-FR')} €</strong> <br><small style="font-weight:400;">Devis définitif après visite technique ou appel.</small>`;
     };
 
-    // Ajouter l'écouteur pour le calcul automatique du prix
-    const surfaceInput = document.getElementById('surface');
-    const projectTypeSelect = document.getElementById('project-type');
-    
     if (surfaceInput && projectTypeSelect) {
         [surfaceInput, projectTypeSelect].forEach(element => {
             element.addEventListener('change', calculateEstimatedPrice);
+            element.addEventListener('input', calculateEstimatedPrice);
         });
     }
 
-    // Gestion des touches clavier pour l'accessibilité
+    // Accessibilité : fermer le menu mobile avec Escape
     document.addEventListener('keydown', function(e) {
-        // Fermer le menu mobile avec Escape
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
         }
     });
 
-    // Amélioration de l'accessibilité pour le menu mobile
-    navToggle.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            navToggle.click();
+    if (navToggle) {
+        navToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navToggle.click();
+            }
+        });
+    }
+
+    // Redimensionnement fenêtre
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navToggle && navMenu) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
         }
     });
 
-    // Fonction pour précharger les animations
-    function preloadAnimations() {
-        // Ajouter des classes CSS pour optimiser les performances des animations
-        document.body.classList.add('animations-ready');
-    }
-
-    // Initialiser les optimisations après le chargement complet
+    // Optimisations après chargement complet
     window.addEventListener('load', function() {
-        preloadAnimations();
-        
-        // Mettre à jour le lien actif initial
+        document.body.classList.add('animations-ready');
         updateActiveNavLink();
 
-        // Performance: lazy loading pour les éléments non critiques
         if ('IntersectionObserver' in window) {
             const lazyElements = document.querySelectorAll('.lazy-load');
             const lazyObserver = new IntersectionObserver((entries) => {
@@ -278,20 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             });
-
-            lazyElements.forEach(element => {
-                lazyObserver.observe(element);
-            });
+            lazyElements.forEach(element => lazyObserver.observe(element));
         }
     });
-
-    // Fonction utilitaire pour déboguer (à supprimer en production)
-    window.debugInfo = function() {
-        console.log('État actuel de l\'application:');
-        console.log('- Menu mobile actif:', navMenu.classList.contains('active'));
-        console.log('- Header scrolled:', header.classList.contains('scrolled'));
-        console.log('- Position de scroll:', window.scrollY);
-        console.log('- Largeur de fenêtre:', window.innerWidth);
-    };
 });
-
